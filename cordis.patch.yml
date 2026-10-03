@@ -1,0 +1,8 @@
+# dsh-token-heatmap bundle patch —— 插件的「挂载声明」。
+# DSH 启动时按 bundle 层栈叠加各插件 patch，本文件把插件插入 profile 配置树。
+#
+# 安装（本地开发，推荐）：
+#   dsh plugin --profile desktop add link:<本目录绝对路径>
+- insert:
+    - id: token-heatmap
+      name: dsh-token-heatmap

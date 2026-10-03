@@ -1,0 +1,44 @@
+{
+  "name": "dsh-token-heatmap",
+  "version": "0.1.0",
+  "description": "DSH 轻量 Token 热力图插件：侧边栏底部迷你绿色方格 + 全宽主面板（日/周/月三档粒度、GitHub 风格热力图），纯 token 计数，数据来自本地会话日志。",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": { "default": "./lib/index.js" },
+    "./client": { "default": "./lib/client.js" },
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-primitives"
+      ]
+    },
+    "compatibility": {
+      "dsh": ">=0.2.0-rc.1 <0.3.0"
+    },
+    "plugin": {
+      "displayName": "Token 热力图 / Token Heatmap",
+      "summary": {
+        "en": "Lightweight token-usage heatmap: a mini strip in the sidebar footer plus a full-width main panel with day/week/month granularity. Pure token counting from local session logs; no cost estimation, no network calls.",
+        "zh-CN": "轻量 Token 用量热力图：侧边栏底部迷你条 + 全宽主面板（日/周/月三档粒度）。纯 token 计数，数据来自本地会话日志；不做费用估算、不外呼网络。"
+      }
+    }
+  },
+  "files": ["lib", "cordis.patch.yml", "README.md", "LICENSE"],
+  "engines": { "node": ">=22" },
+  "keywords": ["dsh", "dsh-plugin", "deepseek-harness", "token", "heatmap"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tempest-sky/dsh-token-heatmap.git"
+  },
+  "homepage": "https://github.com/tempest-sky/dsh-token-heatmap#readme",
+  "bugs": {
+    "url": "https://github.com/tempest-sky/dsh-token-heatmap/issues"
+  }
+}
